@@ -17,7 +17,11 @@ class ResPartner(models.Model):
         help="Specific partner comments that can be included in reports",
     )
 
-    @api.model
-    def _commercial_fields(self):
-        """Add comment templates to commercial fields"""
-        return super()._commercial_fields() + ["base_comment_template_ids"]
+
+    # This method allows the commercial entity (parent) to manage the fielld
+    # for its childs, thus making it automatically inherited on change
+
+    # @api.model
+    # def _commercial_fields(self):
+    #     """Add comment templates to commercial fields"""
+    #     return super()._commercial_fields() + ["base_comment_template_ids"]
